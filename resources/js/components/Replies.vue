@@ -5,7 +5,9 @@
             <reply :data="reply" @deleted="remove(index)"></reply>
         </div>
 
-        <paginator :dataSet="dataSet" @changed="fetch"></paginator>
+        <div class="flex justify-center mb-6">
+            <paginator :dataSet="dataSet" @changed="fetch"></paginator>
+        </div>
 
         <p v-if="$parent.locked" class="text-center h3">
             This thread has been locked. No more replies are allow.

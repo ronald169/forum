@@ -45,7 +45,7 @@ trait Favoritable
         $attributes = ['user_id' => auth()->id()];
 
         if ($this->favorites()->where($attributes)->exists()) {
-            return $this->favorites->each->delete();
+            return $this->favorites()->first()->delete();
         }
     }
 

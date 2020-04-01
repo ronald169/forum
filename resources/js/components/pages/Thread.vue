@@ -45,6 +45,7 @@
                 this.body = this.thread.body;
                 this.editing = false
             }
-        }
+        },
+
     }
 </script>

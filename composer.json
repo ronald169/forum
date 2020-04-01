@@ -15,7 +15,9 @@
         "laravel/framework": "^6.2",
         "laravel/scout": "^8.0",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-activitylog": "^3.9"
+        "spatie/laravel-activitylog": "^3.9",
+        "spatie/laravel-fractal": "^5.7",
+        "stevebauman/purify": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

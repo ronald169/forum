@@ -27,6 +27,9 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="forum" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -134,6 +137,11 @@
       <path value="$PROJECT_DIR$/vendor/tightenco/collect" />
       <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
       <path value="$PROJECT_DIR$/vendor/laravel/scout" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/stevebauman/purify" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
+      <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
+      <path value="$PROJECT_DIR$/vendor/league/fractal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XgFSfJathBEeNFY1YpTGttgnYd" />
@@ -146,14 +154,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage/avatars" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/zondicons" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\forum\resources\views\profiles" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\forum\public\zondicons" />
+      <recent name="C:\laragon\www\forum\public" />
+      <recent name="C:\laragon\www\forum\public\illustration" />
       <recent name="C:\laragon\www\forum\public\storage\avatars" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\forum\public\ent" />
+      <recent name="C:\laragon\www\forum\resources\css" />
+      <recent name="C:\laragon\www\forum\resources\views\profiles" />
     </key>
   </component>
   <component name="RunManager">
@@ -214,7 +228,21 @@
       <workItem from="1584099559586" duration="15464000" />
       <workItem from="1584134599053" duration="13283000" />
       <workItem from="1584182267174" duration="17533000" />
-      <workItem from="1584362231885" duration="1481000" />
+      <workItem from="1584362231885" duration="3465000" />
+      <workItem from="1584416634600" duration="5513000" />
+      <workItem from="1584444564286" duration="9872000" />
+      <workItem from="1584524271444" duration="22680000" />
+      <workItem from="1584602153991" duration="59446000" />
+      <workItem from="1584748591564" duration="11143000" />
+      <workItem from="1584782596203" duration="20628000" />
+      <workItem from="1584874332538" duration="8288000" />
+      <workItem from="1584967273633" duration="6158000" />
+      <workItem from="1585041623979" duration="29393000" />
+      <workItem from="1585119779819" duration="44217000" />
+      <workItem from="1585215318433" duration="57573000" />
+      <workItem from="1585391670689" duration="47278000" />
+      <workItem from="1585558419399" duration="10934000" />
+      <workItem from="1585650921484" duration="34155000" />
     </task>
     <servers />
   </component>
@@ -222,14 +250,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="550" y="41" key="#Notifications" timestamp="1584819055094">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="550" y="41" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1584819055094" />
     <state x="803" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582414822453">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="803" y="115" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1582414822453" />
-    <state x="788" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584186418186">
+    <state x="788" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1585695287901">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="788" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1584186418186" />
+    <state x="788" y="123" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1585695287901" />
     <state x="741" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1582232974691">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -246,33 +278,45 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="669" y="92" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1366.728@0.0.1366.728" timestamp="1582499826314" />
-    <state x="815" y="183" key="NewPhpClassDialog" timestamp="1583587269058">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1584690976470">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="815" y="183" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1583587269058" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1584690976470" />
+    <state x="815" y="183" key="NewPhpClassDialog" timestamp="1585694863341">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="815" y="183" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1585694863341" />
     <state x="895" y="292" key="NewPhpFileDialog" timestamp="1581975246320">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="895" y="292" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1581975246320" />
-    <state x="738" y="13" width="607" height="526" key="com.intellij.ide.util.TipDialog" timestamp="1584362298541">
+    <state x="184" y="7" key="SettingsEditor" timestamp="1584691023335">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="738" y="13" width="607" height="526" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1584362298541" />
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584691023335" />
+    <state x="650" y="31" width="607" height="526" key="com.intellij.ide.util.TipDialog" timestamp="1585650948984">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="650" y="31" width="607" height="526" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585650948984" />
     <state x="655" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582005893650">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="655" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.728@0.0.1366.728" timestamp="1582005893650" />
-    <state x="727" y="100" width="546" height="535" key="dock-window-1" timestamp="1583252581155">
+    <state x="690" y="294" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1585478636555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="727" y="100" width="546" height="535" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1583252581155" />
-    <state x="698" y="166" key="run.anything.popup" timestamp="1584190612127">
+    <state x="690" y="294" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1585478636555" />
+    <state x="727" y="100" width="546" height="535" key="dock-window-1" timestamp="1585675497986">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="698" y="166" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1584190612127" />
-    <state x="768" y="63" width="672" height="678" key="search.everywhere.popup" timestamp="1584364515998">
+    <state x="727" y="100" width="546" height="535" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1585675497986" />
+    <state x="698" y="166" width="672" height="677" key="run.anything.popup" timestamp="1585697875708">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="768" y="63" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1584364515998" />
+    <state x="698" y="166" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1585697875708" />
+    <state x="659" y="48" width="672" height="678" key="search.everywhere.popup" timestamp="1585699470420">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="659" y="48" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1585699470420" />
   </component>
 </project>

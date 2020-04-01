@@ -1,17 +1,17 @@
 <template>
-    <ul class="pagination" v-if="shouldPaginate">
-        <li class="page-item" v-show="prevUrl">
-            <a class="page-link" href="#" aria-label="Previous" @click.prevent="page--">
-                <span aria-hidden="true">&laquo; Prev</span>
-            </a>
-        </li>
+    <div class="inline-flex" v-if="shouldPaginate">
+        <button class="bg-gray-300 hover:bg-gray-400
+        text-gray-800 font-bold
+        py-2 px-4 rounded-l" v-show="prevUrl" @click.prevent="page--">
+            Prev
+        </button>
 
-        <li class="page-item" v-show="nextUrl">
-            <a class="page-link" href="#" aria-label="Next" @click.prevent="page++">
-                <span aria-hidden="true">Next &raquo;</span>
-            </a>
-        </li>
-    </ul>
+        <button v-show="nextUrl" class="bg-gray-300 hover:bg-gray-400
+        text-gray-800 font-bold
+        py-2 px-4 rounded-r" @click.prevent="page++">
+            Next
+        </button>
+    </div>
 </template>
 
 <script>

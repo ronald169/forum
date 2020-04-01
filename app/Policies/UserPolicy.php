@@ -23,4 +23,9 @@ class UserPolicy
     {
         return $user->id === $auth->id;
     }
+
+    public function show(User $user, User $auth)
+    {
+        return $user->id === $auth->id;
+    }
 }

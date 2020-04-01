@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Betreuung;
 use App\Models\Channel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
@@ -28,11 +29,16 @@ class AppServiceProvider extends ServiceProvider
     {
         view()->composer('*', function ($view) {
 
-            $channels = Cache::rememberForever('channels', function () {
-                return Channel::all();
-            });
+            $channels =  Channel::all();
 
             $view->with('channels', $channels);
+        });
+
+        view()->composer('courses.index', function ($view) {
+
+            $klasses =  Betreuung::orderBy('courses_count', 'desc')->get();
+
+            $view->with('klasses', $klasses);
         });
 
         Validator::extend('spamFree', 'App\Rules\SpamFree@passes');

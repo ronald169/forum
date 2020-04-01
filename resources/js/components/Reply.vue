@@ -1,56 +1,45 @@
 <template>
+    <!--        New-->
+    <div class="rounded-lg mb-3" :id="`reply- ${reply.id}`" :class="isBest ? 'border-t-4  border-1 shadow-sm border-green-700' : 'border'">
+        <div v-if="editing" class="p-6">
+            <form @submit="update">
+                <wysiwyg name="body" :value="body" v-model="body"></wysiwyg>
 
-        <div class="card mb-4" :id="`reply- ${reply.id}`">
-
-            <div class="card-header justify-content-between d-flex " :class="isBest ? 'bg-success' : ''">
-                <h5>
-                    <a :href="`/@ ${reply.user.name}`" class="font-weight-bold" v-text="reply.user.name"></a> created
-                    <span v-text="ago"></span>
-                </h5>
-                <div class="d-flex">
-
-                    <favorite :reply="reply"></favorite>
-
+                <div class="mt-2">
+                    <button class="btn btn-sm btn-primary mr-1"
+                            @click.prevent="update"
+                            v-if="authorize('updateReply', reply)"
+                            type="submit">
+                        update
+                    </button>
+                    <button class="btn btn-sm" @click="cancel">cancel</button>
                 </div>
+            </form>
+        </div>
+        <div v-else class="tracking-wide text-gray-600 p-6 font-body " v-html="body"></div>
 
-            </div>
-
-            <div class="card-body">
-                <div v-if="editing">
-
-                    <form @submit="update">
-
-                        <textarea name="body" class="form-control" v-model="body" rows="5" required>
-                        </textarea>
-
-                        <button class="btn btn-sm btn-primary mr-1"
-                        @click.prevent="update"
-                        v-if="authorize('updateReply', reply)"
-                        type="submit">
-                            update
-                        </button>
-                        <button class="btn btn-sm" @click="editing = false">cancel</button>
-
-                    </form>
-
-                </div>
-
-                <div v-else v-html="body">
+        <div class="flex items-center px-6 justify-between" v-show="!editing" :class="isBest ? 'bg-green-200' : 'bg-gray-100'">
+            <div class="flex items-center py-3 font-small font-semibold">
+                <img class="w-10 h-10 rounded-full mr-3 border" :src="reply.user.avatar" alt="Avatar">
+                <div class="text-sm">
+                    <p class="text-gray-900 leading-none"><a :href="`/@ ${reply.user.name}`" v-text="reply.user.name"></a></p>
+                    <p class="text-gray-600" v-text="ago"></p>
                 </div>
             </div>
-
-
-            <div class="card-footer d-flex"
+            <!--     Button           -->
+            <div class="flex"
                  v-if="authorize('owns', reply.thread) || authorize('owns', reply)">
                 <div v-if="authorize('updateReply', reply)">
                     <button  @click.prevent="editing = true" class="btn btn-sm mr-1 btn-primary">Edit</button>
                     <button class="btn btn-danger btn-sm mr-1" @click.prevent="destroy" type="submit">delete</button>
                 </div>
-                <button v-if="authorize('owns', reply.thread)" class="btn btn-secondary btn-sm" v-show="!isBest" @click.prevent="markBestReply" type="submit">Best Reply</button>
+                <button v-if="authorize('owns', reply.thread)" class="font-bold flex items-baseline py-1 px-3 rounded-lg text-green-900 bg-gray-200" v-show="!isBest" @click.prevent="markBestReply" type="submit">Best Reply</button>
             </div>
 
+            <favorite :reply="reply"></favorite>
         </div>
-<!--    </reply>-->
+
+    </div>
 </template>
 
 
@@ -104,14 +93,19 @@
                 });
             },
 
+            cancel() {
+                this.body = this.data.body;
+                this.editing = false
+            },
+
             destroy() {
-                axios.delete(`/replies/${this.data.id}`);
+                if (confirm("Are you sure you want to delete ?")) {
 
-                this.$emit('deleted', this.data.id);
+                    axios.delete(`/replies/${this.data.id}`);
 
-                // $(this.$el).fadeOut(300, () => {
-                //     flash('Your reply has been deleted.');
-                // });
+                    this.$emit('deleted', this.data.id);
+                }
+
             },
 
             markBestReply() {

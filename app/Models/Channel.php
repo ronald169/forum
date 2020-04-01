@@ -11,9 +11,18 @@ class Channel extends Model
         return $this->hasMany('App\Models\Thread');
     }
 
-    public function getRouteKeyName()
+//    public function getRouteKeyName()
+//    {
+//        return 'slug';
+//    }
+
+    public function links()
     {
-        return 'slug';
+        return $this->hasMany('App\Models\CommunityLink');
     }
 
+    public function path_link()
+    {
+        return '/communities/' . $this->id;
+    }
 }

@@ -51,9 +51,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof ValidationException) {
-            return response('Sorry validation failed.', 422);
-        }
+//        if ($exception instanceof ValidationException) {
+//            return response('Sorry validation failed.', 422);
+//        }
 
         if ($exception instanceof ThrottleException) {
             return response('Your are replying too frequently. Please take a break.', 429);

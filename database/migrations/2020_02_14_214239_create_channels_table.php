@@ -19,6 +19,7 @@ class CreateChannelsTable extends Migration
             $table->string('name');
             $table->string('slug');
 
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }

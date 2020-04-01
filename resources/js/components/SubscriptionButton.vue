@@ -19,7 +19,7 @@
 
         computed: {
             classes() {
-                return ['btn', this.sub ? 'btn-primary' : 'btn-default'];
+                return ['font-bold py-1 px-3 rounded-lg', this.sub ? 'bg-green-200 text-green-900 hover:bg-gray-400' : 'bg-gray-300 text-green-900'];
             }
         },
 

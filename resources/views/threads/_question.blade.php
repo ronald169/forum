@@ -1,57 +1,41 @@
-<div class="card mb-4" v-if="!editing">
-    <div class="card-header d-flex justify-content-between">
-        <h2 v-text="title">
+<div class="">
+    <div class="shadow-sm p-6" v-if="!editing">
+        <div class="pb-6">
+            <h3 class="text-2xl text-gray-800 mb-3 font-displa tracking-wide" v-text="thread.title"></h3>
 
-        </h2>
-        @can('delete', $thread)
-            <form action="{{ $thread->path() }}" method="post">
-                @csrf
-                @method('DELETE')
-
-                <button class="btn btn-sm btn-danger" type="submit">delete</button>
-            </form>
-        @endcan
-    </div>
-
-    <div class="card-body" v-text="body"></div>
-
-    <div class="card-footer" v-if="authorize('owns', thread)">
-        <button
-            class="btn btn-primary btn-sm"
-            @click="editing = true">
-            Edit
-        </button>
-    </div>
-</div>
-
-<div class="card mb-4" v-else>
-    <div class="card-header">
-        <div class="form-group">
-            <label>Title</label>
-            <input type="text" class="form-control" v-model="title">
+            <div class="mt-10 tracking-wide text-gray-700 font-body" v-html="thread.body"></div>
         </div>
     </div>
 
-    <div class="card-body">
-
-        <div class="form-group">
-            <label>Body</label>
-            <textarea class="form-control" rows="5" v-model="body"></textarea>
+    <div class="card mb-4" v-else>
+        <div class="card-header">
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" v-model="title">
+            </div>
         </div>
 
-    </div>
+        <div class="card-body">
 
-    <div class="card-footer">
-        <button
-            class="btn btn-primary btn-sm"
-            @click="update">
-            Update
-        </button>
-        <button
-            class="btn btn-primary btn-sm"
-            @click="cancel">
-            Cancel
-        </button>
+            <div class="form-group">
+                <label>Body</label>
+                <wysiwyg name="body" value="body" v-model="body"></wysiwyg>
+            </div>
+
+        </div>
+
+        <div class="card-footer">
+            <button
+                class="btn btn-primary btn-sm"
+                @click="update">
+                Update
+            </button>
+            <button
+                class="btn btn-primary btn-sm"
+                @click="cancel">
+                Cancel
+            </button>
+        </div>
     </div>
 </div>
 

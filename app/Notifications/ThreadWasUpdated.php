@@ -11,13 +11,10 @@ class ThreadWasUpdated extends Notification
 {
     use Queueable;
 
-    protected $thread;
-
     protected $reply;
 
-    public function __construct($thread, $reply)
+    public function __construct($reply)
     {
-        $this->thread = $thread;
         $this->reply = $reply;
     }
 
@@ -26,18 +23,12 @@ class ThreadWasUpdated extends Notification
         return ['database'];
     }
 
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
-    }
+
 
     public function toArray($notifiable)
     {
         return [
-            'message' => $this->reply->user->name . ' replied to ' . $this->thread->title,
+            'message' => $this->reply->user->name . ' replied to ' . $this->reply->thread->title,
             'link' => $this->reply->path()
         ];
     }

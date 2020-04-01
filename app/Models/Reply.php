@@ -31,7 +31,7 @@ class Reply extends Model
 
     protected $appends = ['favoritesCount', 'isFavorited', 'isBest'];
 
-    protected $with = ['user', ];
+    protected $with = ['user'];
 
     protected $fillable = ['body', 'user_id'];
 
@@ -76,5 +76,10 @@ class Reply extends Model
     public function getIsBestAttribute()
     {
         return $this->isBest();
+    }
+
+    public function getBodyAttribute($body)
+    {
+        return \Purify::clean($body);
     }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Events\ThreadHasNewReply;
 use App\Events\ThreadReceivedNewReply;
 use App\Notifications\ThreadWasUpdated;
 use App\Spams\Spam;
@@ -14,7 +13,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Thread extends Model
 {
-    use Searchable;
+//    use Searchable;
 
     protected static function boot()
     {
@@ -22,7 +21,7 @@ class Thread extends Model
 
         static::deleting(function ($thread) {
             if ($thread->replies->count()) {
-                $thread->reply->each->delete();
+                $thread->replies->each->delete();
             }
         });
 
@@ -114,9 +113,7 @@ class Thread extends Model
 
     public function unsubscribe($userId = null)
     {
-
         $this->subscriptions()->where(['user_id' =>  $userId ?: auth()->id()])->delete();
-
     }
 
     public function subscriptions()
@@ -174,4 +171,8 @@ class Thread extends Model
         $this->save();
     }
 
+    public function getBodyAttribute($body)
+    {
+        return \Purify::clean($body);
+    }
 }

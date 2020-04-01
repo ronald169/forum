@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Activity;
+use App\Models\Betreuung;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class ProfileController extends Controller
                     'user' => $user,
                     'threads' => $user->threads()->paginate(3),
                     'activities' => Activity::feed($user),
+//                    'betreuung' => $user(),
                 ]);
     }
 

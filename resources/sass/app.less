@@ -1,0 +1,57 @@
+// Tailwinc css
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+@tailwind base;
+
+@tailwind components;
+
+
+
+button, [role=button] {
+    //@apply .h-3;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea { resize: vertical; }
+img { max-width: 100%; }
+svg { fill: currentColor; }
+
+.nav {
+    @apply .flex .justify-center;
+}
+
+.nav-item {
+    @apply .mr-5 .text-gray-500 .py-6;
+
+    &:last-child {
+        @apply .mr-0;
+    }
+}
+
+.nav-item--active {
+    @apply .text-gray-900 .font-bold .border-green-800;
+}
+
+.tag {
+    @apply .inline-block;
+    @apply .rounded-full;
+    @apply .px-2;
+    @apply .text-center;
+    @apply .text-green-700;
+    @apply .bg-gray-300;
+    @apply .text-xs;
+}
+
+@tailwind utilities;
+
+
+@import '~at.js/dist/css/jquery.atwho.min.css';
+
+////Trix
+@import '~trix/dist/trix.css';
+

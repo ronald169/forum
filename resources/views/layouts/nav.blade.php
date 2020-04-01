@@ -1,6 +1,8 @@
+
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand flex font-small font-semibold text-gray-600" href="{{ url('/') }}">
+            <img src="/zondicons/undraw_Graduation_ktn0.svg" alt="Logo" class="w-8 h-8 mr-3">
             {{ config('app.name', 'Laravel') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -10,33 +12,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/threads">All Threads</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/threads">Forums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/threads?unanswered=1">Unanswered Threads</a>
+                    <a class="nav-link" href="/courses">Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/threads?popular=1">Popular</a>
-                </li>
-                @auth()
-                    <li class="nav-item">
-                        <a class="nav-link" href="/threads?by={{ auth()->user()->name }}">My Thread</a>
-                    </li>
-                @endauth
-                <li class="nav-item">
-                    <a class="nav-link" href="/threads/create">Create threads</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Channel
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach($channels as $channel)
-                            <a class="dropdown-item" href="/threads/{{ $channel->slug }}">{{ $channel->name }}</a>
-                        @endforeach
-                    </div>
+                    <a class="nav-link" href="/klasse">Etablissement</a>
                 </li>
             </ul>
 
